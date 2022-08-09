@@ -1,6 +1,6 @@
 import Race from './Race';
 
-export default class Dwarf extends Race {
+export default class Halfling extends Race {
   private _maxLifePoints: number;
   private static _instances = 0;
 
@@ -9,8 +9,8 @@ export default class Dwarf extends Race {
     dexterity: number,
   ) {
     super(name, dexterity);
-    this._maxLifePoints = 80;
-    Dwarf._instances += 1;
+    this._maxLifePoints = 60;
+    Halfling._instances += 1;
   }
 
   get maxLifePoints(): number {
