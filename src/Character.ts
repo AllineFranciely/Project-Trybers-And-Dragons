@@ -49,7 +49,10 @@ export default class Character implements Fighter {
   }
 
   public get energy(): Energy {
-    return { ...this._energy };
+    return {
+      type_: this._energy.type_,
+      amount: this._energy.amount,
+    };
   }
 
   public get dexterity(): number {
@@ -61,7 +64,7 @@ export default class Character implements Fighter {
   }
 
   special(enemy: Fighter): void {
-    enemy.receiveDamage(this._strength * getRandomInt(1.5, 3));
+    enemy.receiveDamage(this._strength * getRandomInt(0, 5));
   }
 
   levelUp(): void {
